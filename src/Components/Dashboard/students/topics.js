@@ -42,7 +42,7 @@ const Topics = () => {
     <Link to={`/topic/${items._id}`}>  <div class="border-r border-black border-spacing-y-4">
     <div class="flex justify-between p-4 m-2 border-solid border-gray-500 border-b">
      <div>
-     <h1 class="font-semibold w-60 h-12 flex items-center ">{items.name}</h1>
+     <h1 class="font-semibold w-60 h-12 flex items-center">{items.name}</h1>
      </div>
      <div className='flex justify-center items-center'>
      <IoIosArrowForward color='red'size={22}/>
