@@ -21,7 +21,7 @@
 
     /* Heading 2 styling */
     h2 {
-        @apply text-3xl font-extrabold text-gray-900  p-2 border-b border-gray-300;
+        @apply text-3xl font-bold text-gray-900  p-2 border-b border-gray-300;
     }
 
     /* Heading 3 styling */
@@ -50,9 +50,9 @@
     }
 
     /* Anchor (link) styling */
-    /* a {
+     a {
         @apply text-blue-600 underline cursor-pointer hover:text-blue-800;
-    } */
+    } 
 
     /* Table styling */
     table {
