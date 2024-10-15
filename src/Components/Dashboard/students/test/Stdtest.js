@@ -17,8 +17,6 @@ export const Stdtest = () => {
   const [subject, setSubject] = useState('');
   const [test, setTest] = useState(null);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  
-
 
   useEffect(() => {
     const fetchSubjects = async () => {
@@ -92,15 +90,39 @@ export const Stdtest = () => {
               ))}
             </select>
           </div>
-          {
-            test ? test.map((data, index) => (
-              <Link key={index} to={`/student/test/${data?._id}`}>
-                <div className="flex justify-between p-2 m-2 border rounded-lg shadow-2xl">
-                  <h1 className="pt-1">{data?.testName}</h1>
-                </div>
-              </Link>
-            )) : <Loading />
-          }
+          
+          {test ? (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 border">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Test Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {test.map((data, index) => (
+                    <tr key={index}>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {data?.testName}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <Link to={`/student/test/${data?._id}`} className="text-blue-600 hover:underline">
+                          View Test
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </>

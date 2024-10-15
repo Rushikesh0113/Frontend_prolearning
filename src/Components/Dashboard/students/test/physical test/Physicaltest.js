@@ -11,15 +11,13 @@ export const Physicaltest = () => {
   const navigate = useNavigate();
   
   const data = useSelector(store => store.user.data);
- const Id = parseInt(data.standard);
-//const Id=6;
+  const Id = parseInt(data.standard);
+  //const Id=6;
   const [subjects, setSubjects] = useState([]);
   const [subject, setSubject] = useState('');
   const [test, setTest] = useState(null);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   
-
-
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
@@ -77,7 +75,7 @@ export const Physicaltest = () => {
               <button className='px-2' onClick={() => { navigate(-1) }}>
                 <IoIosArrowBack color='red' />
               </button>
-              <p> Tests</p>
+              <p>Tests</p>
             </div>
           </div>
           <div className='flex flex-row justify-between items-center'>
@@ -92,17 +90,39 @@ export const Physicaltest = () => {
               ))}
             </select>
           </div>
-          {console.log(test)}
-          {
-            
-            test ? test.map((data, index) => (
-              <Link key={index} to={`/student/physical-test/${data?._id}`}>
-                <div className="flex justify-between p-2 m-2 border rounded-lg shadow-2xl">
-                  <h1 className="pt-1">{data?.name}</h1>
-                </div>
-              </Link>
-            )) : <Loading />
-          }
+
+          {test ? (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 border">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Test Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {test.map((data, index) => (
+                    <tr key={index}>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {data?.name}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <Link to={`/student/physical-test/${data?._id}`} className="text-blue-600 hover:underline">
+                          View Test
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </>

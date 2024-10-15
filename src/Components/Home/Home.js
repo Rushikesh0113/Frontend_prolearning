@@ -21,19 +21,26 @@ const Home = () => {
   </div>
 </nav>
  
-<div className="flex mt-6 flex-col sm:flex-row">
-<img className="w-[75%]" src="https://img.freepik.com/free-vector/learning-concept-illustration_114360-3896.jpg?ga=GA1.1.737633284.1719914973&semt=sph" alt=""/>
- 
- 
- <div className="flex justify-center items-center">
-<div>
-  <h1 className="p-2 text-3xl font-bold">ProLearning is Changing the world</h1>
-   <div>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor alias aut, adipisci ad voluptates placeat cupiditate. Quidem, vitae voluptatem laborum officiis molestias minus perferendis nulla sed sit animi est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor alias aut, adipisci ad voluptates placeat cupiditate. Quidem, vitae voluptatem laborum officiis molestias minus perferendis nulla sed sit animi est!</div>
+
+<div className="flex mt-6">
+  <div className="flex justify-center md:w-1/2">
+    <img 
+      className="w-full h-auto object-cover rounded-lg" 
+      src="https://img.freepik.com/free-vector/learning-concept-illustration_114360-3896.jpg?ga=GA1.1.737633284.1719914973&semt=sph" 
+      alt="Learning Concept" 
+    />
+  </div>
+
+  <div className="md:w-1/2 flex items-center">
+    <h1 className="p-2 text-3xl font-bold">ProLearning is Changing the World</h1>
+    <div className="p-2 text-lg">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor alias aut, adipisci ad voluptates placeat cupiditate. Quidem, vitae voluptatem laborum officiis molestias minus perferendis nulla sed sit animi est! 
+      <br/><br/>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor alias aut, adipisci ad voluptates placeat cupiditate. Quidem, vitae voluptatem laborum officiis molestias minus perferendis nulla sed sit animi est!
+    </div>
+  </div>
 </div>
- </div>
-</div>
- 
+
  
 <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">

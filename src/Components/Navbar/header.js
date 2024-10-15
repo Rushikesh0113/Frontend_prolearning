@@ -50,7 +50,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
 
   return (
     <>
-      <nav className="bg-[#FF725E] border-b border-black">
+      <nav className="bg-[#FF725E] border-b">
         <div className="max-w-screen-2xl flex items-center justify-between mx-auto p-4">
           <div className="flex flex-row ">
             {!isSideNavOpen && (
@@ -104,13 +104,13 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
       </nav>
 
       <div
-        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform ${isSideNavOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 left-0 w-64 hover:text-white h-full bg-white shadow-lg transform ${isSideNavOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center p-4 border-b">
           <div className="flex flex-row justify-between">
             <IoStar size={24} color="FF725E" className="m-1"/>
-            <h1 className="text-2xl text-orange-400 font-bold">Prolearning</h1>
+            <h1 className="text-2xl text-[#FF725E] font-bold">Prolearning</h1>
           </div>
 
           <button
@@ -120,13 +120,13 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
             <IoMdClose size={20} />
           </button>
         </div>
-        <div className="flex flex-col p-4 space-y-2">
+        <div className="flex flex-col p-4 space-y-2 ">
           <Link
             to={`/${data?.role}/dashboard`}
             className="flex items-center gap-2 p-2 rounded-md hover:bg-[#FF725E] hover:text-white transition-colors"
           >
            <img src={homeicon} width={30} height={10}/>
-            <span className="text-lg font-medium text-orange-400 hover:text-white">Home</span>
+            <span className="text-lg font-medium text-[#FF725E] hover:text-white">Home</span>
           </Link>
           {data?.role !== "PARENT" && (
             <Link
@@ -134,7 +134,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
               className="flex items-center gap-2 p-2 rounded-md hover:bg-[#FF725E] hover:text-white transition-colors"
             >
             <img src={studyicon} width={30} height={10}/>
-              <span className="text-lg text-orange-400 font-medium hover:text-white">Study Material</span>
+              <span className="text-lg text-[#FF725E] font-medium hover:text-white">Study Material</span>
             </Link>
           )}
 
@@ -147,7 +147,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
                 <div className="flex flex-row">
                   {/* <FaRegPenToSquare size={26} className="text-red-500" /> */}
                   <img src={texticon} color="red" width={30} height={10}/>
-                  <span className="text-lg text-orange-400 px-2 font-medium hover:text-white">Test</span>
+                  <span className="text-lg text-[#FF725E] px-2 font-medium hover:text-white">Test</span>
                 </div>
                 <div className="py-2">
                 <FaAngleDown size={16}  />
@@ -159,13 +159,13 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
                     <>
                       <Link
                         to={`/${data?.role}/test`}
-                        className="block px-4 py-2 text-orange-400 hover:bg-[#FF725E] hover:text-white"
+                        className="block px-4 py-2 text-[#FF725E] hover:bg-[#FF725E] hover:text-white"
                       >
                         MCQ Test
                       </Link>
                       <Link
                         to={`/${data?.role}/physical-test`}
-                        className="block px-4 py-2 text-orange-400 hover:bg-[#FF725E] hover:text-white"
+                        className="block px-4 py-2 text-[#FF725E] hover:bg-[#FF725E] hover:text-white"
                       >
                         Physical Test
                       </Link>
@@ -189,7 +189,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
               className="flex items-center gap-2 p-2 rounded-md hover:bg-[#FF725E] hover:text-white transition-colors"
             >
              <img src={assicon} width={30} height={10}/>
-              <span className="text-lg text-orange-400 font-medium hover:text-white">Assignment</span>
+              <span className="text-lg text-[#FF725E] font-medium hover:text-white">Assignment</span>
             </Link>
           )}
           <div className="hover:text-white">
@@ -200,7 +200,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
               className="flex items-center gap-2 p-2 rounded-md hover:bg-[#FF725E] hover:text-white transition-colors"
             >
              <img src={pericon} width={30} height={10}/>
-              <span className="text-lg text-orange-400 font-medium hover:text-white">Performance</span>
+              <span className="text-lg text-[#FF725E] font-medium hover:text-white">Performance</span>
             </Link>
           )}
                     {data?.role === "STUDENT" && (
@@ -209,7 +209,7 @@ const Header = ({ isSideNavOpen, setIsSideNavOpen }) => {
               className="flex items-center gap-2 p-2 rounded-md hover:bg-[#FF725E] hover:text-white transition-colors"
             >
              <img src={commicon} width={30} height={10}/>
-              <span className="text-lg text-orange-400 font-medium hover:text-white">Community</span>
+              <span className="text-lg text-[#FF725E] font-medium hover:text-white">Community</span>
             </Link>
           )}
           </div>
