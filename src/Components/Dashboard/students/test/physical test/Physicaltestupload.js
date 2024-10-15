@@ -260,4 +260,4 @@ formData.append('pdf', pdffile);
   )
 }
  
-export default Physicaltestupload
+
